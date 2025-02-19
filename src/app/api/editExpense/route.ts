@@ -2,7 +2,7 @@ import { connectToDatabase } from "@/lib/mongo";
 import expenseModel from "@/model/expense.model";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
+export async function PATCH(req: NextRequest) {
   try {
     await connectToDatabase();
     const { id, amount, description, type } = await req.json();

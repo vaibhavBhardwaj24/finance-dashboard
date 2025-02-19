@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Expense Tracker Application
 
-## Getting Started
+## Overview
 
-First, run the development server:
+The Expense Tracker Application is designed to help users manage their finances by tracking expenses, categorizing them, and setting budgets. The application is built using Next.js, React, shadcn/ui, Recharts, and MongoDB. It features a responsive design to ensure usability across various devices.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Add/Edit/Delete Transactions**: Users can add, edit, or delete transactions with details such as amount, date, and description.
+- **Transaction List View**: View a list of all transactions.
+- **Monthly Expenses Bar Chart**: Visualize monthly expenses using a bar chart.
+- **Basic Form Validation**: Ensure data integrity with basic form validation.
+- **Predefined Categories**: Transactions can be categorized using predefined categories.
+- **Category-wise Pie Chart**: Visualize expenses by category using a pie chart.
+- **Dashboard**: Summary cards displaying total expenses, category breakdown, and most recent transactions.
+- **Set Monthly Category Budgets**: Users can set monthly budgets for each category.
+- **Budget vs Actual Comparison Chart**: Compare budgeted amounts with actual expenses.
+- **Spending Insights**: Gain insights into spending habits with simple analytics.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **POST /api/createExpense**: Create a new expense.
+  - Body: `{ amount, description, type }`
 
-## Learn More
+- **POST /api/deleteExpense**: Delete an expense by ID.
+  - Body: `{ id }`
 
-To learn more about Next.js, take a look at the following resources:
+- **PATCH /api/editExpense**: Edit an existing expense.
+  - Body: `{ id, amount, description, type }`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **GET /api/getExpense**: Retrieve a list of expenses.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **GET /api/getBudget**: Retrieve the current budget.
 
-## Deploy on Vercel
+- **POST /api/setBudget**: Set a new budget.
+  - Body: `{ type, budget }`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend**: Next.js, React, shadcn/ui, Recharts
+- **Backend**: Next.js API routes
+- **Database**: MongoDB
+- **Styling**: Tailwind CSS (or any other CSS framework you prefer)
+
+## Screenshots
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+
+## Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/vaibhavBhardwaj24/finance-dashboard
+   cd expense-tracker

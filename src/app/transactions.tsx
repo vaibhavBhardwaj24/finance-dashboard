@@ -94,7 +94,7 @@ const Transactions = ({
     sortOrder === "asc" ? a.amount - b.amount : b.amount - a.amount
   );
   const updateTransaction = async () => {
-    const upd = await axios.post("/api/editExpense", {
+    const upd = await axios.patch("/api/editExpense", {
       id: id,
       amount: Amount,
       description: desc,
@@ -206,7 +206,7 @@ const Transactions = ({
                     </AlertDialogTrigger>
                     <AlertDialogContent>
                       <AlertDialogHeader>
-                        <AlertDialogTitle>Add new Transationn</AlertDialogTitle>
+                        <AlertDialogTitle>Edit Transationn</AlertDialogTitle>
                         <AlertDialogDescription>
                           <span className=" flex gap-2 flex-col">
                             <span className=" flex gap-2">

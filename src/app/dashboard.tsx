@@ -44,7 +44,7 @@ const chartConfig: ChartConfig = {
 
 const Dashboard = ({ data }: { data: Transaction[] | undefined }) => {
   if (!data || data.length === 0) {
-    return <div>No data available</div>;
+    return <div className="h-screen w-screen">Loading</div>;
   }
   const types = [
     "Housing",
